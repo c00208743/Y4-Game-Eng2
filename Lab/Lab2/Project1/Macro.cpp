@@ -32,3 +32,23 @@ void Macro::execute()
 
 	std::cout << "executed" << std::endl;
 }
+
+void Macro::undo()
+{
+	if (commands.size() > 0)
+	{
+		(*commands.rbegin())->undo();
+		undone.push_back(*commands.rbegin());
+		commands.pop_back();
+	}
+}
+
+void Macro::redo()
+{
+	if (undone.size() > 0)
+	{
+		(*undone.rbegin())->redo();
+		commands.push_back(*undone.rbegin());
+		undone.pop_back();
+	}
+}
