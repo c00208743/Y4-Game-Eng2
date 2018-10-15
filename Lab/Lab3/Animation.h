@@ -10,6 +10,10 @@ public:
 	{
 		current = s;
 	}
+	void getCurrent(State* s)
+	{
+		current = s;
+	}
 	void idle();
 	void jumping();
 	void climbing();
