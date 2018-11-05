@@ -9,10 +9,10 @@ class PositionSystem
 	std::vector<Entity> entities;
 
 public:
-	void addEntity(Entity e) {}
+	void addEntity(Entity * e) {}
 	void update()
 	{
-		//std::cout << "PositionSystem" << std::endl;
+		std::cout << "PositionSystem" << std::endl;
 		//set up a position vector and  
 	}
 

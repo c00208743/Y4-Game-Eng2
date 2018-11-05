@@ -5,7 +5,7 @@
 class Component
 {
 public:
-
+	virtual ~Component() {}
 
 private:
 

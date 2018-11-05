@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "HealthComponent.h"
 #include "Entity.h"
-#include "System.h"
+#include "HealthSystem.h"
 #include "PositionSystem.h"
 #include "PositionComponent.h"
 
@@ -26,13 +26,13 @@ int main(int argc, char* args[])
 	Entity player;
 	HealthComponent hc;
 	PositionComponent pc;
-	player.addComponent(hc);
-	player.addComponent(pc);
+	player.addComponent(&hc);
+	//player.addComponent(&pc);
 
 	HealthSystem hs;
 	PositionSystem ps;
-	hs.addEntity(player);
-	ps.addEntity(player);
+	hs.addEntity(&player);
+	//ps.addEntity(&player);
 
 
 
@@ -68,7 +68,7 @@ int main(int argc, char* args[])
 	while (true)
 	{
 		hs.update();
-		ps.update();
+		//ps.update();
 	}
 	return 0;
 
