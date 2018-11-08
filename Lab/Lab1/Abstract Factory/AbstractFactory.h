@@ -21,7 +21,7 @@ public:
 		std::cout << "Draw Boss" << std::endl;
 	}
 };
-
+// concrete instances
 class Factory {
 public:
 	virtual Charachter* CreatePlayer() = 0;
@@ -37,3 +37,5 @@ public:
 		return new Boss;
 	}
 };
+
+//create concrete classes implementing the same interface

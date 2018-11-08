@@ -23,8 +23,12 @@ public:
 			for (Component * component : entity->getComponents())
 			{
 				auto c = dynamic_cast<HealthComponent *>(component);
-				int health = c->getHealth() -1;
-				std::cout << health << std::endl;
+	
+				if (component->id == 1)
+				{
+					int health = c->getHealth() - 1;
+					//std::cout << component->id << " : " << health << std::endl;
+				}
 			}
 		}
 	}

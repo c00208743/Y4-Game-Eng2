@@ -16,3 +16,7 @@ int main() {
 
 	std::cin.get();
 }
+// seprates detail of implementation 
+//	client creates instance of abstract factory 
+//	client uses generic interfaces to create concrete istance
+// Abstract classes allow you to provide default functionality for the subclasses.

@@ -10,18 +10,13 @@ public:
 	InputHandler();
 	~InputHandler();
 
-	enum Action
-	{
-		IDLE,
-		JUMPING,
-		CLIMBING
-	};
-	void handleInput(SDL_Event & event);
-	void setCurrent(Action);
-	Action getCurrent();
+	void handleInput(SDL_Event & event, SDL_Rect &viewRect);
+	Animation getCurrentAnimation();
+	void setCurrentAction(Animation a);
 
 private:
-	Action m_current;
+	
 	Animation * fsm;
+	Animation m_current;
 
 };

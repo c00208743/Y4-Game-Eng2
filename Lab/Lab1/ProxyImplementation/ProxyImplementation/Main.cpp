@@ -11,3 +11,5 @@ int main(void) {
 
 	cin.get();
 }
+// proxy is a wrapper or agent object that is being called 
+// by the client to access the real serving object behind the scenes.

@@ -4,7 +4,7 @@
 InputHandler::InputHandler()
 {
 	fsm = new Animation();
-	m_current = IDLE;
+	//m_current = IDLE;
 
 }
 
@@ -12,16 +12,16 @@ InputHandler::~InputHandler()
 {
 
 }
-
-void InputHandler::setCurrent(Action a) {
+Animation InputHandler::getCurrentAnimation()
+{
+	return m_current;
+}
+void InputHandler::setCurrentAction(Animation a)
+{
 	m_current = a;
 }
 
-InputHandler::Action InputHandler::getCurrent() {
-	return m_current;
-}
-
-void InputHandler::handleInput(SDL_Event & event)
+void InputHandler::handleInput(SDL_Event & event, SDL_Rect &viewRect)
 {
 
 	switch (event.type)
@@ -30,18 +30,14 @@ void InputHandler::handleInput(SDL_Event & event)
 		switch (event.key.keysym.sym)
 		{
 		case SDLK_y:
-			fsm->jumping();
-			if (getCurrent() == IDLE)
-				setCurrent(JUMPING);
+			fsm->jumping(viewRect);
+			
 			break;
 		case SDLK_x:
-			fsm->climbing();
-			if (getCurrent() == IDLE)
-				setCurrent(CLIMBING);
+			fsm->climbing(viewRect);
 			break;
 		case SDLK_c:
-			fsm->idle();
-			setCurrent(IDLE);
+			fsm->idle(viewRect);
 			break;
 
 		}

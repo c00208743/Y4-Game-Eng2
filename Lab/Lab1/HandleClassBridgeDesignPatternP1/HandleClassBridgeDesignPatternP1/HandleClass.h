@@ -20,3 +20,5 @@ public:
 private:
 	Character * character;
 };
+//The Bridge pattern is designed to separate a class's interface from its implementation 
+// so you can vary or replace the implementation without changing the client code.

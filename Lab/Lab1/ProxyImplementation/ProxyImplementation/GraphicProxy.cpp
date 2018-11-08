@@ -18,7 +18,7 @@ GraphicProxy::~GraphicProxy() {
 	}
 
 }
-
+//proxy implementation
 Graphic* GraphicProxy::getInstance(void) {
 
 	if (!graphic) {

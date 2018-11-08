@@ -13,7 +13,7 @@ public:
 	void Draw();
 
 private:
-	Graphic * graphic;
+	Graphic* graphic;
 	Graphic* getInstance(void);
 };
 

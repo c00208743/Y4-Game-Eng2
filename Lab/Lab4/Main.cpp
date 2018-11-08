@@ -7,6 +7,11 @@
 #include "HealthSystem.h"
 #include "PositionSystem.h"
 #include "PositionComponent.h"
+#include "AIComponent.h"
+#include "AISystem.h"
+#include "ControlComponent.h"
+#include "ControlSystem.h"
+#include "RenderSystem.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -15,7 +20,7 @@ const int SCREEN_HEIGHT = 480;
 int main(int argc, char* args[])
 {
 	int quit = 0;
-	SDL_Event event;
+	SDL_Event e;
 	//The window we'll be rendering to
 	SDL_Window* window = NULL;
 
@@ -23,16 +28,54 @@ int main(int argc, char* args[])
 	SDL_Surface* screenSurface = NULL;
 
 	//My stuff
-	Entity player;
+	Entity player, alien, cat, dog;
 	HealthComponent hc;
 	PositionComponent pc;
+	AIComponent aic;
+	ControlComponent cc;
+
 	player.addComponent(&hc);
-	//player.addComponent(&pc);
+	player.addComponent(&pc);
+	//player.addComponent(&aic);
+	player.addComponent(&cc);
+
+	alien.addComponent(&hc);
+	alien.addComponent(&pc);
+	alien.addComponent(&aic);
+
+	cat.addComponent(&hc);
+	cat.addComponent(&pc);
+	cat.addComponent(&aic);
+
+	dog.addComponent(&hc);
+	dog.addComponent(&pc);
+	dog.addComponent(&aic);
 
 	HealthSystem hs;
 	PositionSystem ps;
+	AISystem ais;
+	ControlSystem cs;
+	RenderSystem rs;
+
 	hs.addEntity(&player);
-	//ps.addEntity(&player);
+	ps.addEntity(&player);
+	cs.addEntity(&player);
+	rs.addEntity(&player);
+
+	hs.addEntity(&alien);
+	ps.addEntity(&alien);
+	rs.addEntity(&alien);
+	ais.addEntity(&alien);
+
+	hs.addEntity(&cat);
+	ps.addEntity(&cat);
+	rs.addEntity(&cat);
+	ais.addEntity(&cat);
+
+	hs.addEntity(&dog);
+	ps.addEntity(&dog);
+	rs.addEntity(&dog);
+	ais.addEntity(&dog);
 
 
 
@@ -67,8 +110,23 @@ int main(int argc, char* args[])
 
 	while (true)
 	{
-		hs.update();
+		while (SDL_PollEvent(&e) != 0)
+		{
+			//cs.input(e);
+
+			//User requests quit
+			if (e.type == SDL_QUIT)
+			{
+				quit = true;
+			}
+		}
+
+		//hs.update();
 		//ps.update();
+		ais.update();
+		//cs.update();
+		//rs.update();
+
 	}
 	return 0;
 

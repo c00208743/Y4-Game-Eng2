@@ -9,6 +9,12 @@ class Jumping : public State
 public:
 	Jumping() { };
 	~Jumping() {  };
-	void idle(Animation* a);
+	void idle(Animation* a, SDL_Rect &viewRect)
+	{
+		std::cout << "Going from Jumping to Idling" << std::endl;
+		a->setCurrent(new Idle());
+		viewRect.x = 0;
+		delete this;
+	}
 
 };

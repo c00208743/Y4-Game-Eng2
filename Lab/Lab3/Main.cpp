@@ -173,7 +173,7 @@ int main(int argc, char* args[])
 				//Handle events on queue
 				while (SDL_PollEvent(&e) != 0)
 				{
-					handler->handleInput(e);
+					handler->handleInput(e, viewRect);
 
 
 					//User requests quit
@@ -182,7 +182,7 @@ int main(int argc, char* args[])
 						quit = true;
 					}
 				}
-				if (handler->getCurrent() == handler->IDLE)
+				/*if (handler->getCurrent() == handler->IDLE)
 				{
 					viewRect.x = 0;
 				}
@@ -193,7 +193,7 @@ int main(int argc, char* args[])
 				if (handler->getCurrent() == handler->CLIMBING)
 				{
 					viewRect.x = 170;
-				}
+				}*/
 
 				//viewRect.y = viewRect.y + 85;
 				viewRect.w = 85;
@@ -203,6 +203,8 @@ int main(int argc, char* args[])
 				{
 					viewRect.y = 0;
 				}
+
+				viewRect.y = viewRect.y + 85;
 				//Apply the PNG image
 				SDL_BlitSurface(gPNGSurface, &viewRect, gScreenSurface, &rect);
 

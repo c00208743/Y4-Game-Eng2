@@ -43,7 +43,7 @@ void Macro::undo()
 	}
 }
 
-void Macro::redo()
+void Macro::redo()	
 {
 	if (undone.size() > 0)
 	{

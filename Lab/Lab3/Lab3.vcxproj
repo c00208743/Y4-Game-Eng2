@@ -125,10 +125,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="Climbing.cpp" />
     <ClCompile Include="Idle.cpp" />
     <ClCompile Include="InputHandler.cpp" />
-    <ClCompile Include="Jumping.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>

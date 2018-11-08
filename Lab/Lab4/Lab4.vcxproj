@@ -19,12 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AIComponent.h" />
+    <ClInclude Include="AISystem.h" />
     <ClInclude Include="Component.h" />
+    <ClInclude Include="ControlComponent.h" />
+    <ClInclude Include="ControlSystem.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="PositionComponent.h" />
     <ClInclude Include="PositionSystem.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="HealthSystem.h" />
   </ItemGroup>
