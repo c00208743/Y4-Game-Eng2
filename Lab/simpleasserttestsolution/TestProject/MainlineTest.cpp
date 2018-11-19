@@ -28,21 +28,21 @@ int main()
 
 	
 
-	cout << p.someMethod(a) << endl;
+	//cout << p.someMethod(a) << endl;
 	assert(p.someMethod(a) == 0);
 	//assert(p.someMethod(a) == 1);
 
-	cout << p.testSize(v.size()) << endl;
+	//cout << p.testSize(v.size()) << endl;
 	assert(p.testSize(v.size()) == 6);
 
-	cout << p.testRange(a) << endl;
+	//cout << p.testRange(a) << endl;
 	for (int i = 0; i < v.size(); i++)
 	{
 		assert(p.testRange(v[i]) != -1);
 	
 	}
 	
-	cout << p.testDup(v) << endl;	
+	//cout << p.testDup(v) << endl;	
 	assert(p.testDup(v) ==1);
 
 	

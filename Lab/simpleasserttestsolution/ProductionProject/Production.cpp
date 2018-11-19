@@ -34,3 +34,20 @@ int Production::testDup(std::vector<int> vector)
 
 	return 1;
 }
+
+int Production::testVector(std::vector<int> random, std::vector<int> vector )
+{
+	int score= 0;
+
+	for (int j = 0; j < random.size(); j++)
+	{
+		for (int i = 0; i < vector.size(); i++)
+		{
+			if (random[j] == vector[i]) {
+				score++;
+			}
+		}
+	}
+
+	return score;
+}

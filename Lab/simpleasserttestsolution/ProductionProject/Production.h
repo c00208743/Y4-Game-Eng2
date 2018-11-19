@@ -8,4 +8,6 @@ public:
 	int testSize(int size);
 	int testRange(int a);
 	int testDup(std::vector<int> vector);
+
+	int testVector(std::vector<int> random, std::vector<int> vector);
 };
