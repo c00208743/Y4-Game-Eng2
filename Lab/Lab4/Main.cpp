@@ -36,12 +36,13 @@ int main(int argc, char* args[])
 
 	player.addComponent(&hc);
 	player.addComponent(&pc);
-	//player.addComponent(&aic);
-	player.addComponent(&cc);
+	player.addComponent(&aic);
+	//player.addComponent(&cc);
 
 	alien.addComponent(&hc);
 	alien.addComponent(&pc);
 	alien.addComponent(&aic);
+	//alien.addComponent(&cc);
 
 	cat.addComponent(&hc);
 	cat.addComponent(&pc);
@@ -50,6 +51,7 @@ int main(int argc, char* args[])
 	dog.addComponent(&hc);
 	dog.addComponent(&pc);
 	dog.addComponent(&aic);
+	dog.addComponent(&cc);
 
 	HealthSystem hs;
 	PositionSystem ps;
@@ -59,13 +61,15 @@ int main(int argc, char* args[])
 
 	hs.addEntity(&player);
 	ps.addEntity(&player);
-	cs.addEntity(&player);
+	//cs.addEntity(&player);
 	rs.addEntity(&player);
+	ais.addEntity(&player);
 
 	hs.addEntity(&alien);
 	ps.addEntity(&alien);
 	rs.addEntity(&alien);
 	ais.addEntity(&alien);
+	//cs.addEntity(&alien);
 
 	hs.addEntity(&cat);
 	ps.addEntity(&cat);
@@ -75,7 +79,8 @@ int main(int argc, char* args[])
 	hs.addEntity(&dog);
 	ps.addEntity(&dog);
 	rs.addEntity(&dog);
-	ais.addEntity(&dog);
+	//ais.addEntity(&dog);
+	cs.addEntity(&dog);
 
 
 
@@ -112,7 +117,7 @@ int main(int argc, char* args[])
 	{
 		while (SDL_PollEvent(&e) != 0)
 		{
-			//cs.input(e);
+			cs.input(e);
 
 			//User requests quit
 			if (e.type == SDL_QUIT)
@@ -123,8 +128,8 @@ int main(int argc, char* args[])
 
 		//hs.update();
 		//ps.update();
-		ais.update();
-		//cs.update();
+		//ais.update();
+	
 		//rs.update();
 
 	}
